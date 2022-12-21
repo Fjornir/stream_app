@@ -1,0 +1,10 @@
+[
+  {
+    "action": "ECHO",
+    "data?": "string"
+  },
+  {
+    "action": "PING",
+    "data?": "string"
+  }
+]
