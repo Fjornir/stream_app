@@ -34,11 +34,11 @@ wss.on("connection", function connection(ws) {
 app.use(express.static(path.join(__dirname, "/public")));
 
 app.get("/controls", (req, res) => {
-  res.sendFile(path.join(__dirname, "/controls.html"));
+  res.sendFile(path.join(__dirname, "/views/controls.html"));
 });
 
 app.get("/result", (req, res) => {
-  res.sendFile(path.join(__dirname, "/result.html"));
+  res.sendFile(path.join(__dirname, "/views/result.html"));
 });
 
 server.listen(port, () => console.log("Server started at port " + port));
