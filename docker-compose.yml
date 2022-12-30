@@ -1,20 +1,10 @@
 version: '3'
 
 services:
-  nodejs:
+  stream_app:
     build:
       context: .
       dockerfile: Dockerfile
-    image: nodejs
-    container_name: nodejs
-    restart: unless-stopped
-    env_file: .env
-    environment:
+    container_name: stream_reactions
     ports:
-      - "80:8080"
-    volumes:
-      - .:/home/node/app
-      - node_modules:/home/node/app/node_modules
-    networks:
-      - app-network
-    command:  /home/node/app/node_modules/.bin/nodemon app.js
+      - "8999:8080"
