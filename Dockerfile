@@ -1,10 +1,10 @@
-FROM node
+FROM node:lts-alpine3.15
 
 WORKDIR /app
 
 COPY . .
 
-RUN npm install
+RUN npm ci
 
 EXPOSE 8080
 

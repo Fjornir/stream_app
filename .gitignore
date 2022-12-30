@@ -1,0 +1,10 @@
+node_modules
+build
+.env
+npm-debug.log
+
+# IDE
+.vscode
+.idea
+jsconfig.json
+.graphqlconfig
