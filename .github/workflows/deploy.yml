@@ -27,6 +27,7 @@ jobs:
             rm -rf stream_app_prev;
             mv stream_app stream_app_prev;
             mv stream_app_fresh stream_app;
+            cd stream_app;
             docker compose build;
             docker compose up -d;
           '
