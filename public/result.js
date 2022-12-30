@@ -1,6 +1,6 @@
 const result = document.querySelector(".result");
 
-const ws = new WebSocket("ws://localhost:8080");
+const ws = new WebSocket("ws://" + window.location.host);
 
 ws.onmessage = function (event) {
   const data = JSON.parse(event.data);

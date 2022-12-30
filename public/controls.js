@@ -1,6 +1,7 @@
 const createEmojiBtn = document.querySelectorAll(".create-emoji-btn");
 const result = document.querySelector(".result");
-const ws = new WebSocket("ws://localhost:8080");
+const ws = new WebSocket("ws://" + window.location.host);
+
 const isDisabledBtns = {};
 
 ws.onmessage = function (event) {
