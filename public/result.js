@@ -1,9 +1,11 @@
 const result = document.querySelector(".result");
 
 const ws = new WebSocket("ws://" + window.location.host);
+const validContent = ["❤️", "😀", "💩", "🍆", "💦"];
 
 ws.onmessage = function (event) {
   const data = JSON.parse(event.data);
+  if(!isValidContent(data.content)) return
   switch (data.type) {
     case "newMessage":
       rerenderResult(data.content);
@@ -42,5 +44,9 @@ const rerenderResult = (content) => {
   );
   span.innerHTML = content;
   result.appendChild(span);
-  setTimeout(() => span.remove(), 2000);
+  setTimeout(() => span.remove(), 1990);
+};
+
+const isValidContent = (content) => {
+  return validContent.includes(content);
 };
